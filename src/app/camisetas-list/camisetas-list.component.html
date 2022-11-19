@@ -1,0 +1,27 @@
+<h1>Lista de productos</h1>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Talle</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let camiseta of camisetas" [ngClass]="{'clearance': camiseta.clearance}">
+            <td>{{camiseta.nombre}}</td>
+            <td><img width="150" class="img-thumbnail" [src]="camiseta.imagen" [alt]="camiseta.nombre"></td>
+            <td>{{camiseta.talle}}</td>
+            <td>{{camiseta.precio | currency}}</td>
+            <td><span class="badge text-bg-warning"  *ngIf="camiseta.stock == 0">Sin Stock</span></td>
+            <td>
+               <app-input-integer [(cantidad)]="camiseta.cantidad" [max]="camiseta.stock" *ngIf="camiseta.stock" (maxReached)="maxReached($event)"></app-input-integer>
+            </td>
+        </tr>
+        
+    </tbody>
+    
+</table>

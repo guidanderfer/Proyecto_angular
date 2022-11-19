@@ -1,0 +1,6 @@
+<button (click)="disminuir_cantidad()">-</button>
+<input
+    type="text" 
+    [(ngModel)]="cantidad"
+    (keyup)="cambiarcantidad($event)">
+<button (click)="aumentar_cantidad()">+</button>
