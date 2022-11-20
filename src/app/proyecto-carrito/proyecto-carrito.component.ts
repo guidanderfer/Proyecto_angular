@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { camiseta } from '../camisetas-list/camiseta';
+import { CamisetascarritoService } from '../camisetascarrito.service';
 import { carrito } from './carritos';
 
 @Component({
@@ -7,17 +10,12 @@ import { carrito } from './carritos';
   styleUrls: ['./proyecto-carrito.component.scss']
 })
 export class ProyectoCarritoComponent implements OnInit {
-  productos: carrito [] = [
-    {
-      "nombre": "Camiseta Barcelona",
-      "imagen": "assets/img/barcelona.jpg",
-      "talle": "XL",
-      "precio": 10000,
-      "cantidad": 1, 
-    },
-  ] 
 
-  constructor() { }
+  lista_compras$: Observable<camiseta[]>;
+
+  constructor(private carrito: CamisetascarritoService) { 
+    this.lista_compras$ = carrito.lista_compras.asObservable();
+  }
 
   ngOnInit(): void {
   }

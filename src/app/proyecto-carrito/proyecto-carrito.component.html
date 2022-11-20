@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let producto of productos">
+            <tr *ngFor="let producto of lista_compras$ | async">
                 <td>{{producto.nombre}}</td>
                 <td><img [src]="producto.imagen" [alt]="producto.nombre"></td> 
                 <td>{{producto.talle}}</td>

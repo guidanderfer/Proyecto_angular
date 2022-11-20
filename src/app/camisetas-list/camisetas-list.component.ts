@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CamisetascarritoService } from '../camisetascarrito.service';
 import { camiseta } from './camiseta';
 
 @Component({
@@ -49,20 +50,24 @@ export class CamisetasListComponent implements OnInit {
   
 
   ]
-  
-  
-  
+  ;
   
 
-
-
-  constructor() { }
+  constructor(private carrito: CamisetascarritoService) {
+    
+   }
 
   ngOnInit(): void {
   }
 
-  maxReached(m: string){
-    alert(m);
+  agregar_alcarrito(camiseta: camiseta): void{
+    this.carrito.agregar_alcarrito(camiseta);
+    camiseta.stock -= camiseta.cantidad;
+    camiseta.cantidad = 0;
+  }
+
+  maxReached(mensaje: string){
+    alert(mensaje);
   }
 
   

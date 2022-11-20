@@ -8,6 +8,8 @@
             <th>Precio</th>
             <th>Stock</th>
             <th>Cantidad</th>
+            <th>Agregar</th>
+          
         </tr>
     </thead>
     <tbody>
@@ -19,6 +21,10 @@
             <td><span class="badge text-bg-warning"  *ngIf="camiseta.stock == 0">Sin Stock</span></td>
             <td>
                <app-input-integer [(cantidad)]="camiseta.cantidad" [max]="camiseta.stock" *ngIf="camiseta.stock" (maxReached)="maxReached($event)"></app-input-integer>
+               
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="agregar_alcarrito(camiseta)">Agregar</button>
             </td>
         </tr>
         
