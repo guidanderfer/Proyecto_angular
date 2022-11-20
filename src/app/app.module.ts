@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CamisetasListComponent } from './camisetas-list/camisetas-list.component';
-import { CarritoListComponent } from './carrito-list/carrito-list.component';
-
+//import { CarritoListComponent } from './carrito-list/carrito-list.component';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProyectoAboutComponent } from './proyecto-about/proyecto-about.component';
 import { ProyectoCamisetasComponent } from './proyecto-camisetas/proyecto-camisetas.component';
@@ -16,7 +16,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
   declarations: [
     AppComponent,
     CamisetasListComponent,
-    CarritoListComponent,
+    //CarritoListComponent,
     ProyectoAboutComponent,
     ProyectoCamisetasComponent,
     ProyectoCarritoComponent,
@@ -25,7 +25,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
