@@ -6,7 +6,7 @@ import { camiseta } from '../app/camisetas-list/camiseta';
   providedIn: 'root'
 })
 export class CamisetascarritoService {
-
+  
   private _lista_compras: camiseta[] = [];
   lista_compras: BehaviorSubject<camiseta[]> = new BehaviorSubject(this._lista_compras);
 
@@ -19,13 +19,10 @@ export class CamisetascarritoService {
       this._lista_compras.push({ ... camiseta});
 
     } else {
-      item.cantidad == camiseta.cantidad;
+      item.cantidad += camiseta.cantidad;
     }
     
-    console.log(this._lista_compras);
-    this.lista_compras.next(this._lista_compras);
-
-    
+    this.lista_compras.next(this._lista_compras);  
   }
 
   

@@ -4,6 +4,8 @@
         <thead>
             <tr>
                 <th>Nombre</th>
+                <th>Marca</th>
+                <th>Version</th>
                 <th>Imagen</th>
                 <th>Talle</th>
                 <th>Precio</th>
@@ -11,14 +13,19 @@
             </tr>
         </thead>
         <tbody>
+            
             <tr *ngFor="let producto of lista_compras$ | async">
                 <td>{{producto.nombre}}</td>
+                <td>{{producto.marca}}</td>
+                <td>{{producto.version}}</td>
                 <td><img [src]="producto.imagen" [alt]="producto.nombre"></td> 
                 <td>{{producto.talle}}</td>
-                <td>{{producto.precio | currency}}</td>
+                <td>{{producto.precio * producto.cantidad | currency}}</td>
                 <td>{{producto.cantidad}}</td>
             </tr>
         </tbody>
     </table>
     
 </div>
+
+

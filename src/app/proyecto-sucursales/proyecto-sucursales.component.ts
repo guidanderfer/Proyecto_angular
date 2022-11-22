@@ -44,6 +44,12 @@ export class ProyectoSucursalesComponent implements OnInit {
       "email": "sucursaltandil@gmail.com",
       "telefono": 3254749
     },
+    {
+      "pais": "Chile",
+      "ciudad": "Santiago de Chile",
+      "email": "sucursalsantiago@gmail.com",
+      "telefono": 4256831
+    },
   ];
 
   constructor() { }

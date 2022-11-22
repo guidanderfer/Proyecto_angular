@@ -3,6 +3,8 @@
     <thead>
         <tr>
             <th>Nombre</th>
+            <th>Marca</th>
+            <th>Version</th>
             <th>Imagen</th>
             <th>Talle</th>
             <th>Precio</th>
@@ -13,14 +15,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let camiseta of camisetas" [ngClass]="{'clearance': camiseta.clearance}">
+        <tr *ngFor="let camiseta of camisetas">
+            
             <td>{{camiseta.nombre}}</td>
+            <td>{{camiseta.marca}}</td>
+            <td>{{camiseta.version}}</td>
             <td><img width="150" class="img-thumbnail" [src]="camiseta.imagen" [alt]="camiseta.nombre"></td>
             <td>{{camiseta.talle}}</td>
             <td>{{camiseta.precio | currency}}</td>
-            <td><span class="badge text-bg-warning"  *ngIf="camiseta.stock == 0">Sin Stock</span></td>
+            <td><span class="badge text-bg-warning"  *ngIf="camiseta.stock == 0">Sin Stock</span><span class="badge text-bg-success"  *ngIf="camiseta.stock > 0">Hay Stock</span></td>
             <td>
-               <app-input-integer [(cantidad)]="camiseta.cantidad" [maximo]="camiseta.stock" *ngIf="camiseta.stock" (maximoalcanzado)="maximoalcanzado($event)"></app-input-integer>
+               <app-input-integer [(cantidad)]="camiseta.cantidad" [maximo]="camiseta.stock"  *ngIf="camiseta.stock"  (maximoalcanzado)="maximoalcanzado($event)"></app-input-integer>
                
             </td>
             <td><span *ngIf="camiseta.stock > 0"><button class="btn btn-primary" (click)="agregar_alcarrito(camiseta)">Agregar</button></span>

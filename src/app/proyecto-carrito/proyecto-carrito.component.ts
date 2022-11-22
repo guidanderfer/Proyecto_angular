@@ -10,7 +10,6 @@ import { carrito } from './carritos';
   styleUrls: ['./proyecto-carrito.component.scss']
 })
 export class ProyectoCarritoComponent implements OnInit {
-
   lista_compras$: Observable<camiseta[]>;
 
   constructor(private carrito: CamisetascarritoService) { 
@@ -18,6 +17,7 @@ export class ProyectoCarritoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
 }
