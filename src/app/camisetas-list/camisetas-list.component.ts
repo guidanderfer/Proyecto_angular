@@ -30,7 +30,7 @@ export class CamisetasListComponent implements OnInit {
     camiseta.cantidad = 0;
   }
 
-  maxReached(mensaje: string){
+  maximoalcanzado(mensaje: string){
     alert(mensaje);
   }
 

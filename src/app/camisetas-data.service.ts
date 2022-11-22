@@ -16,7 +16,7 @@ export class CamisetasDataService {
     return this.http.get<camiseta[]>(URL)
                 .pipe(
                   tap((camisetas: camiseta[]) => camisetas.forEach(camiseta => camiseta.cantidad = 0))
-                  //camiseta.cantidad = 0;
+                  
                 );
   }
 }

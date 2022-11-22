@@ -2,11 +2,13 @@ import{ProyectoCamisetasComponent} from './proyecto-camisetas/proyecto-camisetas
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import{ProyectoAboutComponent} from './proyecto-about/proyecto-about.component';
+import { ProyectoSucursalesComponent } from './proyecto-sucursales/proyecto-sucursales.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'camisetas',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
@@ -14,9 +16,14 @@ const routes: Routes = [
     component: ProyectoCamisetasComponent
   },
   {
-    path: 'about',
+    path: 'inicio',
     component: ProyectoAboutComponent
-  }
+  },
+  {
+    path: 'sucursales',
+    component: ProyectoSucursalesComponent
+  },
+ 
  
 
 ];
