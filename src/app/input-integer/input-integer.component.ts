@@ -6,6 +6,8 @@ import { camiseta } from '../camisetas-list/camiseta';
   styleUrls: ['./input-integer.component.scss']
 })
 export class InputIntegerComponent implements OnInit {
+  esnumero: boolean | undefined;
+  error: boolean | undefined;
 
   constructor() { }
   @Input()
@@ -42,6 +44,23 @@ export class InputIntegerComponent implements OnInit {
     else
       this.maximoalcanzado.emit("Se alcanzo el maximo, no hay mas stock de este producto");
     
+  }
+
+  cambiar_cantidad(event: KeyboardEvent){
+    if (isNaN(Number(event.key))) {
+      this.esnumero = false;
+      this.error = false;
+      
+    } else {
+      this.esnumero = true;
+      if (Number(event.key) > this.maximo) {
+        this.error = true;
+        
+      } else {
+        this.cantidad = Number(event.key);
+        this.cantidadChange.emit(this.cantidad);
+      }
+    }
   }
   
 

@@ -11,44 +11,37 @@ export class ProyectoSucursalesComponent implements OnInit {
     {
       "pais": "Argentina",
       "ciudad": "Tandil",
-      "email": "sucursaltandil@gmail.com",
-      "telefono": 1254632
+      "email": "sucursaltandil@gmail.com"
     },
     {
       "pais": "Argentina",
       "ciudad": "Mar del Plata",
-      "email": "sucursalmardel@gmail.com",
-      "telefono": 1214674
+      "email": "sucursalmardel@gmail.com" 
     },
     {
       "pais": "Argentina",
       "ciudad": "Buenos Aires",
-      "email": "sucursalbuenosaires@gmail.com",
-      "telefono": 1222576
+      "email": "sucursalbuenosaires@gmail.com"    
     },
     {
       "pais": "Argentina",
       "ciudad": "La Plata",
-      "email": "sucursallaplata@gmail.com",
-      "telefono": 1254887
+      "email": "sucursallaplata@gmail.com"     
     },
     {
       "pais": "Uruguay",
       "ciudad": "Montevideo",
-      "email": "sucursalmontevideo@gmail.com",
-      "telefono": 2254622
+      "email": "sucursalmontevideo@gmail.com"
     },
     {
       "pais": "Brasil",
       "ciudad": "Rio de Janeiro",
-      "email": "sucursaltandil@gmail.com",
-      "telefono": 3254749
+      "email": "sucursaltandil@gmail.com"
     },
     {
       "pais": "Chile",
       "ciudad": "Santiago de Chile",
-      "email": "sucursalsantiago@gmail.com",
-      "telefono": 4256831
+      "email": "sucursalsantiago@gmail.com"
     },
   ];
 
